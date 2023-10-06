@@ -42,14 +42,16 @@
             button3 = new Button();
             textBox1 = new TextBox();
             button4 = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
-            listView1.Location = new Point(12, 79);
+            listView1.FullRowSelect = true;
+            listView1.Location = new Point(12, 74);
             listView1.Name = "listView1";
-            listView1.Size = new Size(639, 299);
+            listView1.Size = new Size(720, 299);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -87,6 +89,7 @@
             // columnHeader7
             // 
             columnHeader7.Text = "Docteur";
+            columnHeader7.Width = 81;
             // 
             // comboBox1
             // 
@@ -100,7 +103,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(657, 155);
+            button1.Location = new Point(779, 153);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 2;
@@ -110,7 +113,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(657, 257);
+            button2.Location = new Point(779, 255);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 3;
@@ -130,14 +133,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(657, 31);
+            textBox1.Location = new Point(607, 29);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 27);
             textBox1.TabIndex = 5;
             // 
             // button4
             // 
-            button4.Location = new Point(622, 379);
+            button4.Location = new Point(707, 405);
             button4.Name = "button4";
             button4.Size = new Size(166, 59);
             button4.TabIndex = 12;
@@ -145,11 +148,21 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(532, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 20);
+            label1.TabIndex = 13;
+            label1.Text = "Docteur :";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(885, 476);
+            Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(textBox1);
             Controls.Add(button3);
@@ -157,6 +170,7 @@
             Controls.Add(button1);
             Controls.Add(comboBox1);
             Controls.Add(listView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form2";
             Text = "Docteur";
             FormClosing += Form2_FormClosing;
@@ -181,5 +195,6 @@
         private TextBox textBox1;
         private ColumnHeader columnHeader7;
         private Button button4;
+        private Label label1;
     }
 }

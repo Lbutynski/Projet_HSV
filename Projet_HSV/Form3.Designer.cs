@@ -59,6 +59,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(button2);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form3";
             Text = "Choix";
             ResumeLayout(false);

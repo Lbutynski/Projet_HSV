@@ -41,12 +41,12 @@
             label5 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            button3 = new Button();
             tabPage2 = new TabPage();
             label7 = new Label();
             button2 = new Button();
             textBox3 = new TextBox();
             label6 = new Label();
-            button3 = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -177,6 +177,16 @@
             tabPage1.Text = "Prise de rendez-vous";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            button3.Location = new Point(613, 348);
+            button3.Name = "button3";
+            button3.Size = new Size(166, 59);
+            button3.TabIndex = 11;
+            button3.Text = "Revenir en arrière";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(label7);
@@ -226,22 +236,13 @@
             label6.TabIndex = 0;
             label6.Text = "Entrez l'ID de votre demande de rendez-vous :";
             // 
-            // button3
-            // 
-            button3.Location = new Point(613, 348);
-            button3.Name = "button3";
-            button3.Size = new Size(166, 59);
-            button3.TabIndex = 11;
-            button3.Text = "Revenir en arrière";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             Text = "Client";
             FormClosing += Form1_FormClosing;

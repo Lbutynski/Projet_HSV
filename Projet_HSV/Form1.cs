@@ -29,6 +29,7 @@ namespace Projet_HSV
                     date = dateTimePicker1.Value.Date.AddHours(dateTimePicker2.Value.Hour).AddMinutes(dateTimePicker2.Value.Minute).ToString(),
                     status = "En attente"
                 };
+                if (!File.Exists("id.txt")) { File.WriteAllText("id.txt", "10000000"); }
                 string id = File.ReadAllText("id.txt");
                 File.WriteAllText("id.txt", (int.Parse(id) + 1).ToString());
                 string filename = "appointment/" + id + ".json";
