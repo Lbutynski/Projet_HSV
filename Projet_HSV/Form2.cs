@@ -51,24 +51,32 @@ namespace Projet_HSV
         private void button1_Click(object sender, EventArgs e)
         {
             string id = listView1.SelectedItems[0].SubItems[5].Text;
+
             listView1.SelectedItems[0].SubItems[4].Text = "Acceptée";
             listView1.SelectedItems[0].SubItems[6].Text = textBox1.Text;
+            
             string contenu = File.ReadAllText($"appointment/{id}.json");
             Appointment appointment = JsonSerializer.Deserialize<Appointment>(contenu);
             appointment.status = "Acceptée";
             appointment.doctor = textBox1.Text == "" ? null : textBox1.Text;
             contenu = JsonSerializer.Serialize(appointment);
+            
             File.WriteAllText($"appointment/{id}.json", contenu);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string id = listView1.SelectedItems[0].SubItems[5].Text;
+
             listView1.SelectedItems[0].SubItems[4].Text = "Refusée";
+            listView1.SelectedItems[0].SubItems[6].Text = "";
+
             string contenu = File.ReadAllText($"appointment/{id}.json");
             Appointment appointment = JsonSerializer.Deserialize<Appointment>(contenu);
             appointment.status = "Refusée";
+            appointment.doctor = null;
             contenu = JsonSerializer.Serialize(appointment);
+
             File.WriteAllText($"appointment/{id}.json", contenu);
         }
 

@@ -30,11 +30,14 @@ namespace Projet_HSV
                     status = "En attente"
                 };
                 if (!File.Exists("id.txt")) { File.WriteAllText("id.txt", "10000000"); }
+
                 string id = File.ReadAllText("id.txt");
                 File.WriteAllText("id.txt", (int.Parse(id) + 1).ToString());
+
                 string filename = "appointment/" + id + ".json";
                 string jsonString = JsonSerializer.Serialize(appointment);
                 File.WriteAllText(filename, jsonString);
+
                 label5.Text = $"Prise de rendez-vous réussis. L'ID est {id}.";
             }
         }
